@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node {
+	char name;
+	struct Node* next;
+};
+int length=0;
+void creatlist() {
+	struct Node* headnode = (struct Node*)malloc(sizeof( struct Node));
+	headnode->next = NULL;
+	char before[100];			int i = 0;
+	char s = getchar();
+	while (s != '@')
+	{
+		before[i] = s;
+		i++;
+		struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+		newnode->name = s;
+		newnode->next = headnode->next;
+		headnode->next = newnode;
+		s = getchar();
+	}
+	int n = 0; 
+	int k = 0;
+	struct Node* pmove = (struct Node*)malloc(sizeof(struct Node));
+	pmove = headnode->next;
+	while (pmove->next != NULL) {
+		if (before[n] == pmove->name) {
+			k++;
+			
+		}
+		n++;
+		pmove = pmove->next;
+		
+	}
+	if (k == n)
+		printf("yes");
+	else
+		printf("NO");
+}
+
+void main() {
+	creatlist();
+
+}
