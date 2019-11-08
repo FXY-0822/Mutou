@@ -1,0 +1,64 @@
+000#include<stdio.h>			
+#include<stdlib.h>
+struct Node {
+	int name;
+	int Count;
+	struct Node* next;
+};//定义结构体
+struct Node* headnode = NULL;
+struct Node* rear = NULL;
+void creatlist(char name, char Count) {
+	struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode->name = name;
+	newnode->Count = Count;
+	newnode->next = NULL;
+	if (headnode == NULL)
+	{
+		headnode = newnode;
+	}
+	else {
+		rear->next = newnode;
+	}
+	rear = newnode;
+	rear->next = headnode;
+}
+
+void movelist() {
+	int i, m = 20;
+	struct Node* pmove = (struct Node*)malloc(sizeof(struct Node));
+	pmove = headnode;
+	while (headnode != NULL) {
+		for (i = 1; i < m; i++)
+		{
+			pmove = pmove->next;
+
+		}
+		m = pmove->name;
+		printf("出列顺序:\n%d\n", pmove->Count);
+		if (pmove->next == pmove)
+		{
+			free(pmove);
+			return;
+		}
+		struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+		temp = pmove->next;
+		pmove->name = temp->name;
+		pmove->Count = temp->Count;
+		pmove->next = temp->next;
+		free(temp);
+
+	}
+
+}
+
+int main() {
+	creatlist(3, 1);
+	creatlist(1, 2);
+	creatlist(7, 3);
+	creatlist(2, 4);
+	creatlist(4, 5);
+	creatlist(8, 6);
+	creatlist(4, 7);
+	movelist();
+	return 0;
+}
