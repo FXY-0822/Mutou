@@ -1,0 +1,11 @@
+package hAHA;
+import java.util.*;
+public class SS{
+	enum Size{big,small}
+	public static void main(String[] args)  {
+		int a=4;
+		int n=2;
+		int c=a<<n;			//利用位运算符，进行快速乘法 a*（2^n）=a<<n
+		System.out.println(c);
+	}
+	}
