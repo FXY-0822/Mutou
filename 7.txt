@@ -1,0 +1,15 @@
+package hAHA;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SS{
+	public static void main(String[] args) throws FileNotFoundException {
+		int[] a= {1,2,9,4,4,5};
+		Arrays.sort(a);
+		for(int s:a)
+			System.out.println(s);
+	}
+}
