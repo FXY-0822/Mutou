@@ -1,0 +1,17 @@
+package hAHA;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SS{
+	public static void main(String[] args) throws FileNotFoundException {
+		int[] a= {1,2,9,4,4,5};
+		Arrays.sort(a);
+		for(int x:a)
+			System.out.println(x);
+		int s=	Arrays.binarySearch(a,5);
+		System.out.println(s);
+	}
+}
