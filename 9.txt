@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node {
+	char name;
+	struct Node* next;
+};
+struct Node* creatlist() {
+	struct Node* headnode = (struct Node*)malloc(sizeof(struct Node));
+	headnode->next = NULL;
+	return headnode;
+}
+void addlist(struct Node* headnode) {
+	
+	struct Node* rear = NULL;
+	rear = headnode;
+	char name;
+	name = getchar();
+	while (name != 's') {
+		struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+		newnode->name = name;
+		rear->next = newnode;
+		rear = newnode;
+		name = getchar();
+	}
+	rear->next = headnode;
+}
+void printflist(struct Node* headnode) {
+	struct Node* pmove = (struct Node*)malloc(sizeof(struct Node));
+	pmove = headnode->next;
+	while (pmove->next!=headnode)
+	{
+		printf("%c", pmove->name);
+		pmove = pmove->next;
+	}
+}
+int main() {
+	struct Node*list = creatlist();
+	addlist(list);
+	printflist(list);
+	return 0;
+}
+
