@@ -1,0 +1,23 @@
+package hello;
+
+class SqStack{
+	int n;
+	String name="yinjiale";
+}					//定义一个类   用于数据
+
+
+class ss{					//定义另一个类   用于方法和主函数
+	SqStack d=new SqStack();		//new出一个第一个类的对象
+	int s=0;						//定义一个整形
+	
+	public void say() {				//定义一个方法
+		System.out.print(d.name);
+	}
+	
+	public static void main(String[] args) {		//主函数
+		ss s = new ss();  			//new出第二个类的一个对象  申请空间
+		s.say();					//调用对象的方法
+		System.out.print(s.s);			//打印出对象的属性
+		
+	}
+}
