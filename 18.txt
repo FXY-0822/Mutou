@@ -1,0 +1,29 @@
+package hello;
+class SqStack{
+	int[] array=new int[100];
+	int top;
+	
+	void Stinit(){
+		top=0;
+	}
+	void push(int a) {
+		array[top++]=a;
+	}
+	void see() {
+		while(top!=0) {
+		System.out.print(array[--top]);
+		}
+	}
+	void pop() {
+		top--;
+	}
+	public static void main(String[] args) {
+		SqStack s=new SqStack();
+		s.Stinit();
+		s.push(1);
+		s.push(3);
+		s.push(2);
+		s.pop();
+		s.see();
+	}
+}
