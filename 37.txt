@@ -1,0 +1,21 @@
+public interface myinterface {
+
+    default void methon()
+    {
+        System.out.println("haha");
+    }
+}
+public interface myinterface2 {
+
+    default void methon(){
+        System.out.println("sssss");
+    }
+}
+ public class interfaceabs implements myinterface,myinterface2 {
+
+    public void methon(){
+        System.out.println("new methon");
+    }
+
+ }
+
